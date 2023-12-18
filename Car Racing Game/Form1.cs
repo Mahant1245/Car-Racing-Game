@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Car_Racing_Game
 {
-    public partial class Form1 : Form
+    public partial class mainMenu : Form
     {
-        public Form1()
+        public mainMenu()
         {
             InitializeComponent();
+        }
+
+        private void fullScreen(object sender, EventArgs e)
+        {
+            
         }
     }
 }
