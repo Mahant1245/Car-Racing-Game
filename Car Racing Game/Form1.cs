@@ -15,11 +15,17 @@ namespace Car_Racing_Game
         public mainMenu()
         {
             InitializeComponent();
+            
         }
 
-        private void fullScreen(object sender, EventArgs e)
+        private void exitBtn_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void helpBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("to play........");
         }
     }
 }
