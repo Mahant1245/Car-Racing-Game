@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Car_Racing_Game
 {
-    public partial class mainMenu : Form
+    public partial class mainMenuForm : Form
     {
-        public mainMenu()
+        public mainMenuForm()
         {
             InitializeComponent();
             
@@ -26,6 +26,13 @@ namespace Car_Racing_Game
         private void helpBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("to play........");
+        }
+
+        private void playBtn_Click(object sender, EventArgs e)
+        {
+            gameForm game = new gameForm();
+            game.Show();
+            this.Hide();
         }
     }
 }

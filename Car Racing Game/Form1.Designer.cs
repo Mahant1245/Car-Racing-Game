@@ -1,6 +1,6 @@
 ﻿namespace Car_Racing_Game
 {
-    partial class mainMenu
+    partial class mainMenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenuForm));
             this.frontPic = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
             this.soundBtn = new System.Windows.Forms.Button();
@@ -117,8 +117,9 @@
             this.playBtn.TabIndex = 6;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = false;
+            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
-            // mainMenu
+            // mainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,7 +132,8 @@
             this.Controls.Add(this.soundBtn);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.frontPic);
-            this.Name = "mainMenu";
+            this.Name = "mainMenuForm";
+            this.Text = "mainMenu";
             ((System.ComponentModel.ISupportInitialize)(this.frontPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

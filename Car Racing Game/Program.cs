@@ -16,7 +16,7 @@ namespace Car_Racing_Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainMenu());
+            Application.Run(new mainMenuForm());
         }
     }
 }
