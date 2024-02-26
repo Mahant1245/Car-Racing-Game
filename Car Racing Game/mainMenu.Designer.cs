@@ -74,7 +74,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.exitBtn.BackColor = System.Drawing.Color.Red;
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(802, 451);
             this.exitBtn.Name = "exitBtn";
@@ -109,7 +109,7 @@
             // 
             // playBtn
             // 
-            this.playBtn.BackColor = System.Drawing.Color.LightBlue;
+            this.playBtn.BackColor = System.Drawing.Color.Lime;
             this.playBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playBtn.Location = new System.Drawing.Point(12, 291);
             this.playBtn.Name = "playBtn";
@@ -132,6 +132,7 @@
             this.Controls.Add(this.soundBtn);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.frontPic);
+            this.MaximizeBox = false;
             this.Name = "mainMenuForm";
             this.Text = "mainMenu";
             ((System.ComponentModel.ISupportInitialize)(this.frontPic)).EndInit();
