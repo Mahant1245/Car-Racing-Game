@@ -31,9 +31,15 @@ namespace Car_Racing_Game
 
         private void playBtn_Click(object sender, EventArgs e)
         {
+            // opens the level1 form
             gameForm game = new gameForm();
             game.Show();
             this.Hide();
+
+            globalClass.sec = 60;
+            globalClass.time.beginTime=DateTime.Now;
+            globalClass.time.gameTime=globalClass.time.beginTime.AddMinutes(1);
+
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="globalClass.cs" />
     <Compile Include="mainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

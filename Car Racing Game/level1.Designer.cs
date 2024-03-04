@@ -28,33 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timeLeftLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // timer
             // 
-            this.button1.Location = new System.Drawing.Point(532, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // timeLeftLabel
+            // 
+            this.timeLeftLabel.AutoSize = true;
+            this.timeLeftLabel.Location = new System.Drawing.Point(29, 21);
+            this.timeLeftLabel.Name = "timeLeftLabel";
+            this.timeLeftLabel.Size = new System.Drawing.Size(51, 13);
+            this.timeLeftLabel.TabIndex = 1;
+            this.timeLeftLabel.Text = "Time Left";
             // 
             // gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 503);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.timeLeftLabel);
             this.Name = "gameForm";
             this.Text = "Game";
+            this.Load += new System.EventHandler(this.gameForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameForm_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label timeLeftLabel;
     }
 }

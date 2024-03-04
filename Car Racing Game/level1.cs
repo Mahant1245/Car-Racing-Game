@@ -12,6 +12,7 @@ namespace Car_Racing_Game
 {
     public partial class gameForm : Form
     {
+        
         public gameForm()
         {
             InitializeComponent();
@@ -23,6 +24,16 @@ namespace Car_Racing_Game
             {
 
             }
+        }
+
+        private void gameForm_Load(object sender, EventArgs e)
+        {
+           timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            timeLeftLabel.Text = globalClass.sec--.ToString();
         }
     }
 
