@@ -5,15 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Car_Racing_Game
+namespace Car_Racing_Game;//this is global class
+
+internal static class globalClass
 {
-    internal static class globalClass
+    public static int sec;
+    public static class time
     {
-        public static int sec;
-        public static class time
-        {
-            public static DateTime beginTime { get; set; }
-            public static DateTime gameTime { get; set; }
-        }
+        public static DateTime beginTime { get; set; }
+        public static DateTime gameTime { get; set; }
     }
 }
