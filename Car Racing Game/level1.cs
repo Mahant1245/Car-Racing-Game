@@ -26,7 +26,7 @@ namespace Car_Racing_Game
             }
         }
 
-        private void gameForm_Load(object sender, EventArgs e)
+        private void gameForm_Load(object sender, EventArgs e)//loadingggggggg
         {
            timer.Start();
         }
