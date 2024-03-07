@@ -39,6 +39,7 @@ namespace Car_Racing_Game
             globalClass.sec = 120;//sets the playing time to maximum of 3 min
             globalClass.time.beginTime=DateTime.Now;
             globalClass.time.gameTime=globalClass.time.beginTime.AddMinutes(3);
+            //makes the endtime of the game to 3 mins 
 
         }
     }
