@@ -75,6 +75,7 @@
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.Red;
+            this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(802, 451);
             this.exitBtn.Name = "exitBtn";

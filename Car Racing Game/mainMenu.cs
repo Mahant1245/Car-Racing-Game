@@ -36,9 +36,9 @@ namespace Car_Racing_Game
             game.Show();
             this.Hide();
 
-            globalClass.sec = 60;
+            globalClass.sec = 120;//sets the playing time to maximum of 3 min
             globalClass.time.beginTime=DateTime.Now;
-            globalClass.time.gameTime=globalClass.time.beginTime.AddMinutes(1);
+            globalClass.time.gameTime=globalClass.time.beginTime.AddMinutes(3);
 
         }
     }

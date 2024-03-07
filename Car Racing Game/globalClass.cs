@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Car_Racing_Game//worked noww
+namespace Car_Racing_Game
 {//this is global class
     internal static class globalClass
     {
