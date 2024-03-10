@@ -28,7 +28,8 @@ namespace Car_Racing_Game
 
         private void gameForm_Load(object sender, EventArgs e)
         {
-           timer.Start();//timer should start as soon as the form is loaded
+            timer.Start();
+           timeLeftLabel.BringToFront();
         }
 
         private void timer_Tick(object sender, EventArgs e)
