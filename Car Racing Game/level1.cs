@@ -29,7 +29,7 @@ namespace Car_Racing_Game
         private void gameForm_Load(object sender, EventArgs e)
         {
             timer.Start();
-           timeLeftLabel.BringToFront();
+           timeLeftLabel.BringToFront();//brings the label in front
         }
 
         private void timer_Tick(object sender, EventArgs e)
