@@ -75,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,6 +89,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_1_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_1_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_2_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_2_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_3_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_3_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grass_Tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HP_Bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road_01_Tile_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road_02_Tile_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Soil_Tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tree.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
