@@ -71,6 +71,7 @@
             this.soundBtn.TabIndex = 2;
             this.soundBtn.Text = "Sound";
             this.soundBtn.UseVisualStyleBackColor = false;
+            this.soundBtn.Click += new System.EventHandler(this.soundBtn_Click);
             // 
             // exitBtn
             // 

@@ -42,5 +42,10 @@ namespace Car_Racing_Game
             //makes the endtime of the game to 3 mins 
 
         }
+
+        private void soundBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

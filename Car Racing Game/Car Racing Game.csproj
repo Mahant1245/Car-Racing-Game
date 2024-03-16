@@ -147,5 +147,35 @@
   <ItemGroup>
     <None Include="Resources\heart.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road_Main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road_Side_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Road_Side_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desertMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desertSide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desertSide2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadSide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadSide2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadSide11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadSide21.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

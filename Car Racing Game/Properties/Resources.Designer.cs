@@ -113,9 +113,29 @@ namespace Car_Racing_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap desertTile {
+        internal static System.Drawing.Bitmap desertMain {
             get {
-                object obj = ResourceManager.GetObject("desertTile", resourceCulture);
+                object obj = ResourceManager.GetObject("desertMain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desertSide1 {
+            get {
+                object obj = ResourceManager.GetObject("desertSide1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desertSide2 {
+            get {
+                object obj = ResourceManager.GetObject("desertSide2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +183,29 @@ namespace Car_Racing_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap roadTile {
+        internal static System.Drawing.Bitmap roadMain {
             get {
-                object obj = ResourceManager.GetObject("roadTile", resourceCulture);
+                object obj = ResourceManager.GetObject("roadMain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roadSide1 {
+            get {
+                object obj = ResourceManager.GetObject("roadSide1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roadSide2 {
+            get {
+                object obj = ResourceManager.GetObject("roadSide2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
