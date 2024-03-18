@@ -59,10 +59,11 @@ namespace Car_Racing_Game
             if (speedup==true)
             {
                 sideTileFlow();//this will make the tile flow double
+                obstacleMove();
             }
 
         }
-        public void sideTileFlow()
+        public void sideTileFlow()//method to flow the side tile
         {
             foreach(Control x in this.Controls)
             {
@@ -76,6 +77,27 @@ namespace Car_Racing_Game
                     {
                         x.Top += 5;
                     }
+                }
+            }
+        }
+        public void obstacleMove()
+        {
+            foreach (Control y in this.Controls)
+            {
+                if (y.Tag == "obstacle")
+                {
+                    if (y.Top > 550)
+                    {
+                        y.Top = 0;//starts from top
+                        Random rn = new Random();
+                        int xloc, yloc;
+                        //generates random value for x and y location
+                        xloc = rn.Next(100,400);
+                        yloc = rn.Next(50,200);
+                        //assign random value to the obstacles
+                        y.Location = new Point(xloc, yloc);
+                    }
+                    y.Top += 5;//everytime keep moving down 
                 }
             }
         }
@@ -113,6 +135,7 @@ namespace Car_Racing_Game
         {
             playerMovement();
             sideTileFlow();
+            obstacleMove();
         }
     }
 
