@@ -17,12 +17,13 @@ namespace Car_Racing_Game
         {
             InitializeComponent();
         }
-
+        //variables for movement
         bool right;
         bool left;
         bool speedup;
         private void gameForm_KeyDown(object sender, KeyEventArgs e)
         {
+            //this checks if A,D or spacebar is pressed
             if (e.KeyCode == Keys.A)
             {
                 left = true;
@@ -41,16 +42,36 @@ namespace Car_Racing_Game
         {
             if(right==true)
             {
-                if(player.Left<430)
+                if(player.Left<430)//checks if the pixels are within the boundary of the form
                 {
                     player.Left += 5;
+                    //takes the players distance from left edge and move it 5 pixels further apart
                 }
             }
             if (left==true)
             {
-                if(player.Left>0)
+                if(player.Left>0)//checks if the pixels are within the boundary of the form
                 {
                     player.Left-=5;
+                    //takes the players distance from left edge and move it 5 pixels closer to left edge
+                }
+            }
+
+        }
+        public void sideTileFlow()
+        {
+            foreach(Control x in this.Controls)
+            {
+                if(x.Tag=="sideTile")
+                {
+                    if (x.Top>430)
+                    {
+                        x.Top = -100;
+                    }
+                    else
+                    {
+                        x.Top += 5;
+                    }
                 }
             }
         }
@@ -69,6 +90,7 @@ namespace Car_Racing_Game
 
         private void gameForm_KeyUp(object sender, KeyEventArgs e)
         {
+            //makes sure that it is set to false as soon as the key is released
             if (e.KeyCode == Keys.A)
             {
                 left = false;
@@ -83,9 +105,10 @@ namespace Car_Racing_Game
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)//timer for realtime movement
         {
             playerMovement();
+            sideTileFlow();
         }
     }
 
