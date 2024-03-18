@@ -56,15 +56,19 @@ namespace Car_Racing_Game
                     //takes the players distance from left edge and move it 5 pixels closer to left edge
                 }
             }
+            if (speedup==true)
+            {
+                sideTileFlow();//this will make the tile flow double
+            }
 
         }
         public void sideTileFlow()
         {
             foreach(Control x in this.Controls)
             {
-                if(x.Tag=="sideTile")
+                if (x.Tag == "sideTile")
                 {
-                    if (x.Top>430)
+                    if (x.Top > 430)
                     {
                         x.Top = -100;
                     }
