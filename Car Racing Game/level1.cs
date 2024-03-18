@@ -130,6 +130,16 @@ namespace Car_Racing_Game
                 speedup = false;
             }
         }
+        public void checkCollision ()
+        {
+            foreach (Control z in this.Controls)
+            {
+                if (z.Tag == "obstacle") 
+                {
+                    //need to do collision for obstacle and user
+                }
+            }
+        }
 
         private void timer1_Tick(object sender, EventArgs e)//timer for realtime movement
         {

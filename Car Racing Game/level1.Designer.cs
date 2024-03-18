@@ -133,7 +133,7 @@
             // 
             this.player.BackColor = System.Drawing.Color.Transparent;
             this.player.Image = global::Car_Racing_Game.Properties.Resources.userCar;
-            this.player.Location = new System.Drawing.Point(232, 315);
+            this.player.Location = new System.Drawing.Point(221, 305);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(65, 81);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -171,7 +171,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::Car_Racing_Game.Properties.Resources.rock;
-            this.pictureBox8.Location = new System.Drawing.Point(61, 94);
+            this.pictureBox8.Location = new System.Drawing.Point(60, 76);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 31);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,7 +183,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::Car_Racing_Game.Properties.Resources.car2;
-            this.pictureBox10.Location = new System.Drawing.Point(411, 25);
+            this.pictureBox10.Location = new System.Drawing.Point(432, 90);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(40, 67);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +195,7 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = global::Car_Racing_Game.Properties.Resources.car1;
-            this.pictureBox11.Location = new System.Drawing.Point(300, 108);
+            this.pictureBox11.Location = new System.Drawing.Point(247, 170);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(50, 76);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +207,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::Car_Racing_Game.Properties.Resources.car3;
-            this.pictureBox9.Location = new System.Drawing.Point(64, 210);
+            this.pictureBox9.Location = new System.Drawing.Point(38, 243);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(61, 76);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,7 +219,7 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::Car_Racing_Game.Properties.Resources.car4;
-            this.pictureBox12.Location = new System.Drawing.Point(178, 25);
+            this.pictureBox12.Location = new System.Drawing.Point(131, 7);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(49, 64);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
