@@ -41,11 +41,11 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.rock = new System.Windows.Forms.PictureBox();
+            this.car2 = new System.Windows.Forms.PictureBox();
+            this.car1 = new System.Windows.Forms.PictureBox();
+            this.car3 = new System.Windows.Forms.PictureBox();
+            this.car4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -54,11 +54,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car4)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -167,65 +167,65 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Tag = "sideTile";
             // 
-            // pictureBox8
+            // rock
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::Car_Racing_Game.Properties.Resources.rock;
-            this.pictureBox8.Location = new System.Drawing.Point(60, 76);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(50, 31);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 13;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "obstacle";
+            this.rock.BackColor = System.Drawing.Color.Transparent;
+            this.rock.Image = global::Car_Racing_Game.Properties.Resources.rock;
+            this.rock.Location = new System.Drawing.Point(60, 76);
+            this.rock.Name = "rock";
+            this.rock.Size = new System.Drawing.Size(50, 31);
+            this.rock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rock.TabIndex = 13;
+            this.rock.TabStop = false;
+            this.rock.Tag = "obstacle";
             // 
-            // pictureBox10
+            // car2
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Image = global::Car_Racing_Game.Properties.Resources.car2;
-            this.pictureBox10.Location = new System.Drawing.Point(432, 90);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(40, 67);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 15;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "obstacle";
+            this.car2.BackColor = System.Drawing.Color.Transparent;
+            this.car2.Image = global::Car_Racing_Game.Properties.Resources.car2;
+            this.car2.Location = new System.Drawing.Point(432, 90);
+            this.car2.Name = "car2";
+            this.car2.Size = new System.Drawing.Size(40, 67);
+            this.car2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car2.TabIndex = 15;
+            this.car2.TabStop = false;
+            this.car2.Tag = "obstacle";
             // 
-            // pictureBox11
+            // car1
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Image = global::Car_Racing_Game.Properties.Resources.car1;
-            this.pictureBox11.Location = new System.Drawing.Point(247, 170);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(50, 76);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 16;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Tag = "obstacle";
+            this.car1.BackColor = System.Drawing.Color.Transparent;
+            this.car1.Image = global::Car_Racing_Game.Properties.Resources.car1;
+            this.car1.Location = new System.Drawing.Point(247, 170);
+            this.car1.Name = "car1";
+            this.car1.Size = new System.Drawing.Size(50, 76);
+            this.car1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car1.TabIndex = 16;
+            this.car1.TabStop = false;
+            this.car1.Tag = "obstacle";
             // 
-            // pictureBox9
+            // car3
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Image = global::Car_Racing_Game.Properties.Resources.car3;
-            this.pictureBox9.Location = new System.Drawing.Point(38, 243);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(61, 76);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 17;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Tag = "obstacle";
+            this.car3.BackColor = System.Drawing.Color.Transparent;
+            this.car3.Image = global::Car_Racing_Game.Properties.Resources.car3;
+            this.car3.Location = new System.Drawing.Point(38, 243);
+            this.car3.Name = "car3";
+            this.car3.Size = new System.Drawing.Size(61, 76);
+            this.car3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car3.TabIndex = 17;
+            this.car3.TabStop = false;
+            this.car3.Tag = "obstacle";
             // 
-            // pictureBox12
+            // car4
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = global::Car_Racing_Game.Properties.Resources.car4;
-            this.pictureBox12.Location = new System.Drawing.Point(131, 7);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(49, 64);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 18;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Tag = "obstacle";
+            this.car4.BackColor = System.Drawing.Color.Transparent;
+            this.car4.Image = global::Car_Racing_Game.Properties.Resources.car4;
+            this.car4.Location = new System.Drawing.Point(131, 7);
+            this.car4.Name = "car4";
+            this.car4.Size = new System.Drawing.Size(49, 64);
+            this.car4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.car4.TabIndex = 18;
+            this.car4.TabStop = false;
+            this.car4.Tag = "obstacle";
             // 
             // gameForm
             // 
@@ -233,20 +233,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Car_Racing_Game.Properties.Resources.roadMain;
             this.ClientSize = new System.Drawing.Size(534, 511);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.car4);
+            this.Controls.Add(this.car3);
+            this.Controls.Add(this.car1);
+            this.Controls.Add(this.rock);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.car2);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "gameForm";
@@ -262,11 +262,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.car4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,10 +284,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox rock;
+        private System.Windows.Forms.PictureBox car2;
+        private System.Windows.Forms.PictureBox car1;
+        private System.Windows.Forms.PictureBox car3;
+        private System.Windows.Forms.PictureBox car4;
     }
 }
