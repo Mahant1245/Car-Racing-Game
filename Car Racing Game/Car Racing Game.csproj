@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gameOver.Designer.cs">
+      <DependentUpon>gameOver.cs</DependentUpon>
+    </Compile>
     <Compile Include="globalClass.cs" />
     <Compile Include="mainMenu.cs">
       <SubType>Form</SubType>

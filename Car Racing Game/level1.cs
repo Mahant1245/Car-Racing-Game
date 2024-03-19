@@ -16,11 +16,13 @@ namespace Car_Racing_Game
         public gameForm()
         {
             InitializeComponent();
+            
         }
         //variables for movement
         bool right;
         bool left;
         bool speedup;
+        int collision;
         private void gameForm_KeyDown(object sender, KeyEventArgs e)
         {
             //this checks if A,D or spacebar is pressed
@@ -67,7 +69,7 @@ namespace Car_Racing_Game
         {
             foreach(Control x in this.Controls)
             {
-                if (x.Tag == "sideTile")
+                if ((string)x.Tag == "sideTile")
                 {
                     if (x.Top > 430)
                     {
@@ -82,29 +84,24 @@ namespace Car_Racing_Game
         }
         public void obstacleMove()
         {
-                foreach (Control y in this.Controls)
+            foreach (Control y in this.Controls)
+            {
+                if ((string)y.Tag == "obstacle")
                 {
-                    if (y.Tag == "obstacle")
+                    if (y.Top > 550)
                     {
-                        if (y.Top > 550)
-                        {
-                            y.Top = 0;//starts from top
-                            Random rn = new Random();
-                            int xloc, yloc;
-                            //generates random value for x and y location
-                            xloc = rn.Next(100, 400);
-                            yloc = rn.Next(50, 200);
-                            //assign random value to the obstacles
-                            
-                            if (obsCollision() == true)
-                            {
-                                obstacleMove();//recursive call
-                                y.Location = new Point(xloc, yloc);
-                            }
-                        }
-                        y.Top += 5;//everytime keep moving down 
+                        y.Top = 0;//starts from top
+                        Random rn = new Random();
+                        int xloc, yloc;
+                        //generates random value for x and y location
+                        xloc = rn.Next(50, 450);
+                        yloc = rn.Next(0, 150);
+                        //assign random value to the obstacles
+                        y.Location = new Point(xloc, yloc);
                     }
+                    y.Top += 5;//everytime keep moving down 
                 }
+            }
 
         }
 
@@ -136,44 +133,39 @@ namespace Car_Racing_Game
                 speedup = false;
             }
         }
-        public bool obsCollision ()//obstacle collide with obstacle
+
+        public void playerCollision()//player with obstacle collision
         {
-            if(   car1.Bounds.IntersectsWith(rock.Bounds) || car1.Bounds.IntersectsWith(car2.Bounds)
-                  || car1.Bounds.IntersectsWith(car3.Bounds) || car1.Bounds.IntersectsWith(car4.Bounds)
+
+            if (player.Bounds.IntersectsWith(rock.Bounds) || player.Bounds.IntersectsWith(car1.Bounds)
+                || player.Bounds.IntersectsWith(car2.Bounds) || player.Bounds.IntersectsWith(car3.Bounds)
+                || player.Bounds.IntersectsWith(car4.Bounds) || player.Bounds.IntersectsWith(car1.Bounds)
+                || player.Bounds.IntersectsWith(sideTile1.Bounds) || player.Bounds.IntersectsWith(sideTile2.Bounds)
+                || player.Bounds.IntersectsWith(sideTile3.Bounds) || player.Bounds.IntersectsWith(sideTile4.Bounds)
               )
             {
-                return true;
-            }
-            
-            if (car2.Bounds.IntersectsWith(rock.Bounds) || car2.Bounds.IntersectsWith(car1.Bounds)
-                  || car2.Bounds.IntersectsWith(car3.Bounds) || car2.Bounds.IntersectsWith(car4.Bounds)
-              )
-            {
-                return true;
-            }
-            
-            if (car3.Bounds.IntersectsWith(rock.Bounds) || car3.Bounds.IntersectsWith(car2.Bounds)
-                  || car3.Bounds.IntersectsWith(car1.Bounds) || car3.Bounds.IntersectsWith(car4.Bounds)
-              )
-            {
-                return true;
+                obstacleMove();
+                collision +=1;
+                updateLife();
+
             }
 
-            if (car4.Bounds.IntersectsWith(rock.Bounds) || car4.Bounds.IntersectsWith(car2.Bounds)
-                  || car4.Bounds.IntersectsWith(car3.Bounds) || car4.Bounds.IntersectsWith(car1.Bounds)
-              )
-            {
-                return true;
-            }
+        }
 
-            if (rock.Bounds.IntersectsWith(car1.Bounds) || rock.Bounds.IntersectsWith(car2.Bounds)
-                  || rock.Bounds.IntersectsWith(car3.Bounds) || rock.Bounds.IntersectsWith(car4.Bounds)
-              )
+        public void updateLife()
+        {
+           if(collision==1)
             {
-                return true;
+                heart1.Visible = false;
             }
-
-            return false;
+            if (collision == 2)
+            {
+                heart2.Visible = false;
+            }
+            if (collision == 3)
+            {
+                heart3.Visible = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)//timer for realtime movement
@@ -181,6 +173,11 @@ namespace Car_Racing_Game
             playerMovement();
             sideTileFlow();
             obstacleMove();
+           
+            
+
+            
+            
         }
     }
 
