@@ -1,6 +1,6 @@
 ﻿namespace Car_Racing_Game
 {
-    partial class gameOver
+    partial class pauseMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // resultLbl
-            // 
-            this.resultLbl.AutoSize = true;
-            this.resultLbl.Location = new System.Drawing.Point(318, 77);
-            this.resultLbl.Name = "resultLbl";
-            this.resultLbl.Size = new System.Drawing.Size(35, 13);
-            this.resultLbl.TabIndex = 0;
-            this.resultLbl.Text = "Score";
-            // 
-            // gameOver
+            // pauseMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.resultLbl);
-            this.Name = "gameOver";
-            this.Text = "gameOver";
-            this.Load += new System.EventHandler(this.gameOver_Load);
+            this.Name = "pauseMenu";
+            this.Text = "pauseMenu";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label resultLbl;
     }
 }

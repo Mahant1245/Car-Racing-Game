@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace Car_Racing_Game
 {
-    public partial class gameOver : Form
+    public partial class pauseMenu : Form
     {
-        public gameOver()
+       
+
+        public pauseMenu()
         {
             InitializeComponent();
         }
 
-        private void gameOver_Load(object sender, EventArgs e)
-        {
-            resultLbl.Text = "Score: "+globalClass.score.ToString();
-        }
+        
     }
 }

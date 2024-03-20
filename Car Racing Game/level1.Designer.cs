@@ -46,8 +46,8 @@
             this.heart1 = new System.Windows.Forms.PictureBox();
             this.heart3 = new System.Windows.Forms.PictureBox();
             this.heart2 = new System.Windows.Forms.PictureBox();
-            this.life = new System.Windows.Forms.PictureBox();
             this.boost = new System.Windows.Forms.PictureBox();
+            this.scoreLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -61,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.heart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boost)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,18 +232,6 @@
             this.heart2.TabIndex = 21;
             this.heart2.TabStop = false;
             // 
-            // life
-            // 
-            this.life.BackColor = System.Drawing.Color.Transparent;
-            this.life.Image = global::Car_Racing_Game.Properties.Resources.life;
-            this.life.Location = new System.Drawing.Point(171, 90);
-            this.life.Name = "life";
-            this.life.Size = new System.Drawing.Size(44, 52);
-            this.life.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.life.TabIndex = 22;
-            this.life.TabStop = false;
-            this.life.Tag = "obstacle";
-            // 
             // boost
             // 
             this.boost.BackColor = System.Drawing.Color.Transparent;
@@ -257,14 +244,26 @@
             this.boost.TabStop = false;
             this.boost.Tag = "obstacle";
             // 
+            // scoreLbl
+            // 
+            this.scoreLbl.AutoSize = true;
+            this.scoreLbl.BackColor = System.Drawing.Color.Transparent;
+            this.scoreLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLbl.ForeColor = System.Drawing.Color.Yellow;
+            this.scoreLbl.Location = new System.Drawing.Point(151, -9);
+            this.scoreLbl.Name = "scoreLbl";
+            this.scoreLbl.Size = new System.Drawing.Size(145, 52);
+            this.scoreLbl.TabIndex = 24;
+            this.scoreLbl.Text = "Score";
+            // 
             // gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Car_Racing_Game.Properties.Resources.roadMain;
             this.ClientSize = new System.Drawing.Size(534, 511);
+            this.Controls.Add(this.scoreLbl);
             this.Controls.Add(this.boost);
-            this.Controls.Add(this.life);
             this.Controls.Add(this.heart2);
             this.Controls.Add(this.heart3);
             this.Controls.Add(this.heart1);
@@ -299,7 +298,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.heart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.life)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,7 +321,7 @@
         private System.Windows.Forms.PictureBox heart1;
         private System.Windows.Forms.PictureBox heart3;
         private System.Windows.Forms.PictureBox heart2;
-        private System.Windows.Forms.PictureBox life;
         private System.Windows.Forms.PictureBox boost;
+        private System.Windows.Forms.Label scoreLbl;
     }
 }

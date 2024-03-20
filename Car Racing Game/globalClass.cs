@@ -10,6 +10,7 @@ namespace Car_Racing_Game
     internal static class globalClass
     {
         public static int sec;//no.of available for game
+        public static int score;//total score
         public static class time //time class that can be accessed from every form.
         {
             public static DateTime beginTime { get; set; }

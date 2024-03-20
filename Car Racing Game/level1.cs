@@ -15,17 +15,32 @@ namespace Car_Racing_Game
     public partial class gameForm : Form
     {
         
-        public gameForm()
-        {
-            InitializeComponent();
-            
-        }
         //variables for movement
         bool right;
         bool left;
         bool speedup;
         int collision;
-        bool wasColliding=false;//to check if it was already colliding before
+        bool wasColliding = false;//to check if it was already colliding before
+        bool boostActive = false;
+        Timer boostTimer = new Timer();
+        
+        
+
+        public gameForm()
+        {
+            InitializeComponent();
+            boostTimer.Interval = 5000; //5 seconds
+            boostTimer.Tick += BoostTimer_Tick;
+           
+        }
+        
+        private void BoostTimer_Tick(object sender, EventArgs e)
+        {
+            boostActive = false;
+            speedup = false; // Turn off speed boost after 3 seconds
+            boostTimer.Stop(); // Stop the timer
+        }
+
         private void gameForm_KeyDown(object sender, KeyEventArgs e)
         {
             //this checks if A,D or spacebar is pressed
@@ -37,9 +52,28 @@ namespace Car_Racing_Game
             {
                 right = true;
             }
-            if(e.KeyCode == Keys.Space)
+            if(e.KeyCode == Keys.Space && boostActive==true)
             {
                 speedup = true;
+                boostTimer.Start(); // Start the timer when speed boost is activated
+            }
+            if(e.KeyCode==Keys.Escape)
+            {
+                timer1.Stop();
+                timer.Stop();
+                //pops message box
+                var result = MessageBox.Show("Do you want to resume?\n NO will result in game over","",MessageBoxButtons.YesNo,MessageBoxIcon.None);
+                if(result==DialogResult.Yes)
+                {
+                    timer1.Start();
+                    timer.Start();
+                }
+                if(result==DialogResult.No)//takes to gameover form
+                {
+                    gameOver finish = new gameOver();
+                    finish.Show();
+                    this.Hide();
+                }
             }
         }
 
@@ -65,6 +99,7 @@ namespace Car_Racing_Game
             {
                 sideTileFlow();//this will make the tile flow double
                 obstacleMove();
+                
             }
 
         }
@@ -90,10 +125,12 @@ namespace Car_Racing_Game
         {
             foreach (Control y in this.Controls)
             {
-                if ((string)y.Tag == "obstacle" && !(y.Name=="life")&&!(y.Name=="boost"))
+                if ((string)y.Tag == "obstacle" &&!(y.Name=="boost"))
                 {
                     if (y.Top > 550)
                     {
+                        globalClass.score+= 1;//increase score
+                        scoreLbl.Text = "Score:"+ globalClass.score.ToString();
                         y.Top = 0;//starts from top
                         Random rn = new Random();
                         int xloc, yloc;
@@ -106,12 +143,12 @@ namespace Car_Racing_Game
                     y.Top += 5;//everytime keep moving down 
                 }
 
-                if (((string)y.Tag == "obstacle" && y.Name == "life")|| ((string)y.Tag == "obstacle" && y.Name == "boost"))
+                if ((string)y.Tag == "obstacle" && y.Name == "boost")
                 {
                     
                     if (y.Top > 1000)//to make it pop up less often
                     {
-                        life.Visible = true;
+                        
                         boost.Visible = true;   
                         y.Top = 0;//starts from top
                         Random rn = new Random();
@@ -165,7 +202,6 @@ namespace Car_Racing_Game
         {
             timer.Start();
            timeLeftLabel.BringToFront();//brings the label in front
-           life.Visible = false;
             boost.Visible = false;  
         }
 
@@ -185,14 +221,17 @@ namespace Car_Racing_Game
             {
                 right = false;
             }
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space&&boostActive)
             {
                 speedup = false;
             }
+            
         }
+        
 
         public void playerCollision()//player with obstacle collision
         {
+            
             //checks with every obstacles
             bool isColliding = player.Bounds.IntersectsWith(rock.Bounds) ||
                                player.Bounds.IntersectsWith(car1.Bounds) ||
@@ -210,12 +249,12 @@ namespace Car_Racing_Game
                 if (!wasColliding)
                 {
                     collision++;
-                    
+
                 }
                 wasColliding = true;
-                if(collision ==1)
+                if (collision == 1)
                 {
-                    heart1.Visible= false;
+                    heart1.Visible = false;
                 }
                 if (collision == 2)
                 {
@@ -224,18 +263,32 @@ namespace Car_Racing_Game
                 if (collision == 3)
                 {
                     heart3.Visible = false;
+                    timer1.Stop();
+                    gameOverState();
                 }
             }
             else
             {
                 wasColliding = false;
             }
+
+            if ( player.Bounds.IntersectsWith(boost.Bounds))
+            {
+                boostActive = true; // activate boost
+                boost.Visible = false; // Hide the boost PictureBox
+            }
         }
 
+        
 
         public void gameOverState()
         {
-
+            if (collision == 3)
+            {
+                gameOver finish = new gameOver();
+                finish.Show();
+                this.Hide();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)//timer for realtime movement
