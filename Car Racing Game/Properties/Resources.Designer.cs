@@ -63,6 +63,16 @@ namespace Car_Racing_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boost {
+            get {
+                object obj = ResourceManager.GetObject("boost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bush {
             get {
                 object obj = ResourceManager.GetObject("bush", resourceCulture);

@@ -90,7 +90,7 @@ namespace Car_Racing_Game
         {
             foreach (Control y in this.Controls)
             {
-                if ((string)y.Tag == "obstacle")
+                if ((string)y.Tag == "obstacle" && !(y.Name=="life")&&!(y.Name=="boost"))
                 {
                     if (y.Top > 550)
                     {
@@ -105,6 +105,26 @@ namespace Car_Racing_Game
                     }
                     y.Top += 5;//everytime keep moving down 
                 }
+
+                if (((string)y.Tag == "obstacle" && y.Name == "life")|| ((string)y.Tag == "obstacle" && y.Name == "boost"))
+                {
+                    
+                    if (y.Top > 1000)//to make it pop up less often
+                    {
+                        life.Visible = true;
+                        boost.Visible = true;   
+                        y.Top = 0;//starts from top
+                        Random rn = new Random();
+                        int xloc, yloc;
+                        //generates random value for x and y location
+                        xloc = rn.Next(50, 420);
+                        yloc = rn.Next(0, 150);
+                        //assign random value to the obstacles
+                        y.Location = new Point(xloc, yloc);
+                    }
+                    y.Top += 5;//everytime keep moving down 
+                }
+
             }
 
         }
@@ -145,7 +165,8 @@ namespace Car_Racing_Game
         {
             timer.Start();
            timeLeftLabel.BringToFront();//brings the label in front
-           
+           life.Visible = false;
+            boost.Visible = false;  
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -210,6 +231,7 @@ namespace Car_Racing_Game
                 wasColliding = false;
             }
         }
+
 
         public void gameOverState()
         {
