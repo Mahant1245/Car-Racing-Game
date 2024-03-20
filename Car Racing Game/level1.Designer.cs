@@ -32,9 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gameForm));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.timeLeftLabel = new System.Windows.Forms.Label();
-            this.heart1 = new System.Windows.Forms.PictureBox();
-            this.heart3 = new System.Windows.Forms.PictureBox();
-            this.heart2 = new System.Windows.Forms.PictureBox();
             this.sideTile3 = new System.Windows.Forms.PictureBox();
             this.sideTile1 = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
@@ -46,9 +43,9 @@
             this.car1 = new System.Windows.Forms.PictureBox();
             this.car3 = new System.Windows.Forms.PictureBox();
             this.car4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.heart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heart2)).BeginInit();
+            this.heart1 = new System.Windows.Forms.PictureBox();
+            this.heart3 = new System.Windows.Forms.PictureBox();
+            this.heart2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -59,6 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.car1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.car4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart2)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -76,37 +76,6 @@
             this.timeLeftLabel.Size = new System.Drawing.Size(123, 29);
             this.timeLeftLabel.TabIndex = 1;
             this.timeLeftLabel.Text = "Time Left";
-            // 
-            // heart1
-            // 
-            this.heart1.BackColor = System.Drawing.Color.Transparent;
-            this.heart1.Image = global::Car_Racing_Game.Properties.Resources.heart;
-            this.heart1.Location = new System.Drawing.Point(424, 7);
-            this.heart1.Name = "heart1";
-            this.heart1.Size = new System.Drawing.Size(27, 22);
-            this.heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.heart1.TabIndex = 3;
-            this.heart1.TabStop = false;
-            // 
-            // heart3
-            // 
-            this.heart3.Image = global::Car_Racing_Game.Properties.Resources.heart;
-            this.heart3.Location = new System.Drawing.Point(488, 8);
-            this.heart3.Name = "heart3";
-            this.heart3.Size = new System.Drawing.Size(25, 21);
-            this.heart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.heart3.TabIndex = 4;
-            this.heart3.TabStop = false;
-            // 
-            // heart2
-            // 
-            this.heart2.Image = global::Car_Racing_Game.Properties.Resources.heart;
-            this.heart2.Location = new System.Drawing.Point(457, 8);
-            this.heart2.Name = "heart2";
-            this.heart2.Size = new System.Drawing.Size(25, 21);
-            this.heart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.heart2.TabIndex = 5;
-            this.heart2.TabStop = false;
             // 
             // sideTile3
             // 
@@ -143,7 +112,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 25;
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // sideTile2
@@ -227,12 +196,46 @@
             this.car4.TabStop = false;
             this.car4.Tag = "obstacle";
             // 
+            // heart1
+            // 
+            this.heart1.BackColor = System.Drawing.Color.Transparent;
+            this.heart1.Image = ((System.Drawing.Image)(resources.GetObject("heart1.Image")));
+            this.heart1.Location = new System.Drawing.Point(392, 7);
+            this.heart1.Name = "heart1";
+            this.heart1.Size = new System.Drawing.Size(41, 39);
+            this.heart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.heart1.TabIndex = 19;
+            this.heart1.TabStop = false;
+            // 
+            // heart3
+            // 
+            this.heart3.BackColor = System.Drawing.Color.Transparent;
+            this.heart3.Image = ((System.Drawing.Image)(resources.GetObject("heart3.Image")));
+            this.heart3.Location = new System.Drawing.Point(486, 7);
+            this.heart3.Name = "heart3";
+            this.heart3.Size = new System.Drawing.Size(41, 39);
+            this.heart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.heart3.TabIndex = 20;
+            this.heart3.TabStop = false;
+            // 
+            // heart2
+            // 
+            this.heart2.BackColor = System.Drawing.Color.Transparent;
+            this.heart2.Image = ((System.Drawing.Image)(resources.GetObject("heart2.Image")));
+            this.heart2.Location = new System.Drawing.Point(439, 7);
+            this.heart2.Name = "heart2";
+            this.heart2.Size = new System.Drawing.Size(41, 39);
+            this.heart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.heart2.TabIndex = 21;
+            this.heart2.TabStop = false;
+            // 
             // gameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Car_Racing_Game.Properties.Resources.roadMain;
             this.ClientSize = new System.Drawing.Size(534, 511);
+            this.Controls.Add(this.heart2);
             this.Controls.Add(this.heart3);
             this.Controls.Add(this.heart1);
             this.Controls.Add(this.car4);
@@ -242,7 +245,6 @@
             this.Controls.Add(this.sideTile4);
             this.Controls.Add(this.sideTile2);
             this.Controls.Add(this.player);
-            this.Controls.Add(this.heart2);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.sideTile1);
             this.Controls.Add(this.sideTile3);
@@ -254,9 +256,6 @@
             this.Load += new System.EventHandler(this.gameForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameForm_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.heart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideTile1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -267,6 +266,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.car1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.car3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.car4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,9 +277,6 @@
         #endregion
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label timeLeftLabel;
-        private System.Windows.Forms.PictureBox heart1;
-        private System.Windows.Forms.PictureBox heart3;
-        private System.Windows.Forms.PictureBox heart2;
         private System.Windows.Forms.PictureBox sideTile3;
         private System.Windows.Forms.PictureBox sideTile1;
         private System.Windows.Forms.PictureBox player;
@@ -289,5 +288,8 @@
         private System.Windows.Forms.PictureBox car1;
         private System.Windows.Forms.PictureBox car3;
         private System.Windows.Forms.PictureBox car4;
+        private System.Windows.Forms.PictureBox heart1;
+        private System.Windows.Forms.PictureBox heart3;
+        private System.Windows.Forms.PictureBox heart2;
     }
 }
