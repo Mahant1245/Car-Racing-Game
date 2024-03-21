@@ -65,11 +65,11 @@
     <Compile Include="level1.Designer.cs">
       <DependentUpon>level1.cs</DependentUpon>
     </Compile>
-    <Compile Include="pauseMenu.cs">
+    <Compile Include="viewHighscore.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pauseMenu.Designer.cs">
-      <DependentUpon>pauseMenu.cs</DependentUpon>
+    <Compile Include="viewHighscore.Designer.cs">
+      <DependentUpon>viewHighscore.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +82,8 @@
     <EmbeddedResource Include="level1.resx">
       <DependentUpon>level1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pauseMenu.resx">
-      <DependentUpon>pauseMenu.cs</DependentUpon>
+    <EmbeddedResource Include="viewHighscore.resx">
+      <DependentUpon>viewHighscore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
