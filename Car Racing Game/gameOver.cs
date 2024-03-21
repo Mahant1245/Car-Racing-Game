@@ -41,12 +41,15 @@ namespace Car_Racing_Game
 
             SaveScore(globalClass.playerName, globalClass.score);
 
+            
+           
             viewHighscore view = new viewHighscore();
             view.Show();
             this.Hide();
         }
         private static void SaveScore(string name, int score)
         {
+           var sortedScores= globalClass.highscore.OrderByDescending<(string, int), int>(x => x.Item2);
             using (StreamWriter writer = new StreamWriter(globalClass.filePath, true))
             {
                 writer.WriteLine(name + "," + score);

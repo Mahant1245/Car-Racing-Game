@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Car_Racing_Game
     public partial class viewHighscore : Form
     {
         
-
+        bool isInitialized=false;
         public viewHighscore()
         {
             InitializeComponent();
@@ -25,16 +26,30 @@ namespace Car_Racing_Game
         {
             hsListView.Columns.Add("Name",100);
             hsListView.Columns.Add("Score",100);
-            foreach(var (name,score)in globalClass.highscore)
+
+            hsListView.Items.Clear();
+            if (File.Exists(globalClass.filePath))
             {
-                ListViewItem item = new ListViewItem(name);
-                item.SubItems.Add(score.ToString());
-                hsListView.Items.Add(item);
+               
+
+                string[] contents = File.ReadAllLines(globalClass.filePath);
+                foreach (string line in contents)
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 2)
+                    {
+                        ListViewItem item = new ListViewItem(parts[0]);
+                        item.SubItems.Add(parts[1]);
+                        hsListView.Items.Add(item);
+
+                       
+                    }
+                }
+               
+                
             }
-        }
-        public void showPreviousScore()
-        {
             
         }
+       
     }
 }
