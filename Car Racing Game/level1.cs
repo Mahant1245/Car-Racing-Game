@@ -293,7 +293,7 @@ namespace Car_Racing_Game
 
         public void gameOverState()
         {
-            if (collision == 3)
+            if (collision == 3||globalClass.sec==0)
             {
                 gameOver finish = new gameOver();
                 finish.Show();

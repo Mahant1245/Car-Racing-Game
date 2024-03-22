@@ -26,7 +26,11 @@ namespace Car_Racing_Game
 
         private void helpBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("to play........");
+            MessageBox.Show("Welcome to Car Racing Game. \n You have 3 mins to make a highscore.\n" +
+                " You'll start with 3 life and if you collide with obstacle your life will be reduced by one" +
+                " as a powerup when u collect boost, you can use SPACEBAR to speed up for 3 sec." +
+                " 'A' key is for left and 'D' key is for right movement.\n" +
+                " ENJOY!!");
         }
 
         private void playBtn_Click(object sender, EventArgs e)
