@@ -23,9 +23,10 @@ namespace Car_Racing_Game
 
         private void gameOver_Load(object sender, EventArgs e)
         {
-            resultLbl.Text = "Your Score: " + globalClass.score.ToString();
+            resultLbl.Text = "Your Score: " + globalClass.score.ToString();//updates the score
             nameBox.Text = Console.ReadLine();
 
+            //read all previous score and store in highscore list
             if (File.Exists(globalClass.filePath))
             {
                 globalClass.highscore = File.ReadAllLines(globalClass.filePath)
@@ -48,7 +49,8 @@ namespace Car_Racing_Game
             globalClass.playerName = nameBox.Text;
             nameBox.Clear();
             SaveScore(globalClass.playerName, globalClass.score);
-
+            
+            //closes this form
             viewHighscore finish = new viewHighscore();
             finish.Show();
             this.Hide();
@@ -60,9 +62,9 @@ namespace Car_Racing_Game
             globalClass.highscore.Add((name, score));
 
             // Sort the scores in descending order
-            globalClass.highscore = globalClass.highscore.OrderByDescending(s => s.Item2).ToList();
+            globalClass.highscore = globalClass.highscore.OrderByDescending(s => s.Item2).ToList();//got from web
 
-            // Write the sorted scores to the file
+            //Takes the name and score and Write the sorted scores to the file
             using (StreamWriter writer = new StreamWriter(globalClass.filePath))
             {
                 foreach (var scoreEntry in globalClass.highscore)
@@ -71,14 +73,6 @@ namespace Car_Racing_Game
                         
                 }
             }
-
-            
-
         }
-        
-
-        public void copyabove()
-            {}
-
     }
 }

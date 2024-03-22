@@ -254,14 +254,17 @@ namespace Car_Racing_Game
                 wasColliding = true;
                 if (collision == 1)
                 {
+                    sound();
                     heart1.Visible = false;
                 }
                 if (collision == 2)
                 {
+                    sound();
                     heart2.Visible = false;
                 }
                 if (collision == 3)
                 {
+                    sound();
                     heart3.Visible = false;
                     timer1.Stop();
                     gameOverState();
@@ -279,7 +282,14 @@ namespace Car_Racing_Game
             }
         }
 
-        
+        public void sound()//plays sound
+        {
+            if (globalClass.playSound==true)
+            {
+                System.Media.SoundPlayer hit = new System.Media.SoundPlayer(Properties.Resources.sound);
+                hit.Play();
+            }
+        }
 
         public void gameOverState()
         {
@@ -293,14 +303,12 @@ namespace Car_Racing_Game
 
         private void timer1_Tick(object sender, EventArgs e)//timer for realtime movement
         {
+            //calling realtime methods
             playerMovement();
             sideTileFlow();
             obstacleMove();
             playerCollision();
             obstacleCollision();
-            
-
-            
             
         }
     }

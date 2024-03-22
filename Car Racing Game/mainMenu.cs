@@ -45,7 +45,12 @@ namespace Car_Racing_Game
 
         private void soundBtn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("do you want to mute sound","",MessageBoxButtons.YesNo);
+            if(DialogResult==DialogResult.Yes)
+            {
+                globalClass.playSound = false;
+            }
+            
         }
 
         private void viewscoreBtn_Click(object sender, EventArgs e)

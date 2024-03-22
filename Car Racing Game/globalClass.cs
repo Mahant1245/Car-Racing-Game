@@ -15,6 +15,7 @@ namespace Car_Racing_Game
         public static string playerName = "";
         public static string filePath = "highscore.txt";
        public static List<(string, int)> highscore = new List<(string, int)>();
+        public static bool playSound=true;
         public static class time //time class that can be accessed from every form.
         {
             public static DateTime beginTime { get; set; }

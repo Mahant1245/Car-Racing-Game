@@ -201,5 +201,8 @@
   <ItemGroup>
     <None Include="Resources\boost.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
