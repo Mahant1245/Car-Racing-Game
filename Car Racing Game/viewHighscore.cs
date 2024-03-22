@@ -27,10 +27,11 @@ namespace Car_Racing_Game
             hsListView.Columns.Add("Name",100);
             hsListView.Columns.Add("Score",100);
 
-            hsListView.Items.Clear();
+            hsListView.Items.Clear();//clear
+            globalClass.highscore = new List<(string, int)>();//newlist
+            
             if (File.Exists(globalClass.filePath))
             {
-               
 
                 string[] contents = File.ReadAllLines(globalClass.filePath);
                 foreach (string line in contents)
@@ -42,14 +43,26 @@ namespace Car_Racing_Game
                         item.SubItems.Add(parts[1]);
                         hsListView.Items.Add(item);
 
-                       
                     }
                 }
-               
-                
             }
+
             
+
         }
-       
+
+        private void showMenu_Click(object sender, EventArgs e)
+        {
+            globalClass.sec = 0;//started with same made rest include in nea
+            globalClass.score = 0;
+            mainMenuForm menu = new mainMenuForm();
+            menu.Show();
+            this.Hide();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -108,6 +108,7 @@
             this.viewscoreBtn.TabIndex = 5;
             this.viewscoreBtn.Text = "View Leaderboard";
             this.viewscoreBtn.UseVisualStyleBackColor = false;
+            this.viewscoreBtn.Click += new System.EventHandler(this.viewscoreBtn_Click);
             // 
             // playBtn
             // 

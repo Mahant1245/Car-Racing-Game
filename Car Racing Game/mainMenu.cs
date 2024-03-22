@@ -47,5 +47,12 @@ namespace Car_Racing_Game
         {
 
         }
+
+        private void viewscoreBtn_Click(object sender, EventArgs e)
+        {
+            viewHighscore finish = new viewHighscore();
+            finish.Show();
+            this.Hide();
+        }
     }
 }

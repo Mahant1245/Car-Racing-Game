@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Car_Racing_Game
 {
@@ -17,13 +18,22 @@ namespace Car_Racing_Game
         public gameOver()
         {
             InitializeComponent();
+            
         }
 
         private void gameOver_Load(object sender, EventArgs e)
         {
-            resultLbl.Text = "Your Score: "+globalClass.score.ToString();
-            nameBox.Text=Console.ReadLine();
-            
+            resultLbl.Text = "Your Score: " + globalClass.score.ToString();
+            nameBox.Text = Console.ReadLine();
+
+            if (File.Exists(globalClass.filePath))
+            {
+                globalClass.highscore = File.ReadAllLines(globalClass.filePath)
+                                 .Select(line => line.Split(','))
+                                 .Where(parts => parts.Length == 2)
+                                 .Select(parts => (parts[0], int.Parse(parts[1])))
+                                 .ToList();
+            }
 
         }
 
@@ -32,29 +42,43 @@ namespace Car_Racing_Game
             if (nameBox.Text == "")//validation check
             {
                 MessageBox.Show("Bad input!!");
+                return;
             }
-            
-            
-                globalClass.playerName = nameBox.Text;
-                nameBox.Clear();
-                globalClass.highscore.Add((globalClass.playerName, globalClass.score));
 
+            globalClass.playerName = nameBox.Text;
+            nameBox.Clear();
             SaveScore(globalClass.playerName, globalClass.score);
 
-            
-           
-            viewHighscore view = new viewHighscore();
-            view.Show();
+            viewHighscore finish = new viewHighscore();
+            finish.Show();
             this.Hide();
         }
-        private static void SaveScore(string name, int score)
+
+        private void SaveScore(string name, int score)
         {
-           var sortedScores= globalClass.highscore.OrderByDescending<(string, int), int>(x => x.Item2);
-            using (StreamWriter writer = new StreamWriter(globalClass.filePath, true))
+            /// Add the new score to the list
+            globalClass.highscore.Add((name, score));
+
+            // Sort the scores in descending order
+            globalClass.highscore = globalClass.highscore.OrderByDescending(s => s.Item2).ToList();
+
+            // Write the sorted scores to the file
+            using (StreamWriter writer = new StreamWriter(globalClass.filePath))
             {
-                writer.WriteLine(name + "," + score);
+                foreach (var scoreEntry in globalClass.highscore)
+                {
+                    writer.WriteLine($"{scoreEntry.Item1},{scoreEntry.Item2}");
+                        
+                }
             }
+
+            
+
         }
+        
+
+        public void copyabove()
+            {}
 
     }
 }
